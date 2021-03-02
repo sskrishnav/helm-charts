@@ -23,9 +23,9 @@ postgresql:
   ## Set to false if bringing your own PostgreSQL.
   ##
   enabled: true
-  postgresUser: pactbroker
-  postgresPassword: pactbroker
-  postgresDatabase: pactbroker
+  postgresqlUsername: pactbroker
+  postgresqlPassword: pactbroker
+  postgresqlDatabase: pactbroker
 
   persistence:
     ## Enable PostgreSQL persistence using Persistent Volume Claims.
@@ -34,7 +34,7 @@ postgresql:
 
 persistence:
   enabled: true
-  accessMode: ReadWriteOnce
+  accessModes: ReadWriteOnce
   size: 8Gi
 
 
@@ -43,9 +43,7 @@ ingress:
   annotations: {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
-  hosts:
-    - host: pact-broker.pega.com
-      paths: []
+  hostname: pact-broker.pega.com
 
   tls: []
   #  - secretName: pact-broker-tls
