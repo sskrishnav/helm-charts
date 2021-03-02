@@ -2,3 +2,4 @@
 coverage
 *.tgz
 .idea
+Chart.lock
