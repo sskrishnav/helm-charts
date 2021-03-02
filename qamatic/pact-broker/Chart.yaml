@@ -1,12 +1,15 @@
 name: pact-broker
-version: 0.1.0
-apiVersion: v1
-appVersion: "1.0"
+version: 0.2.0
+apiVersion: v2
+appVersion: "2.0"
 description: A Helm chart for Pact-Broker
-icon: https://qamatic.github.io/qamatic-assets/logo-m.png
 sources:
-  - https://github.com/qamatic/helm-charts
+  - https://github.com/sskrishnav/helm-charts
 maintainers:
-  - name: Senthil Maruthaiappan
-    email: senips@gmail.com
+  - name: Vutukuri Sai Siva Krishna
+    email: sskrishnavutukuri@gmail.com
+dependencies:
+  - name: postgresql
+    version: 13.2.0
+    repository: https://charts.bitnami.com/bitnami
 
