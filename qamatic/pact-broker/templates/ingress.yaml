@@ -1,12 +1,12 @@
 {{- if .Values.ingress.enabled -}}
  
-apiVersion: networking.k8s.io/v1
+apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
   name: {{ template "pact-broker.fullname" . }}
   labels:
-  {{- with .Values.ingress.annotations }}
   annotations:
+  {{- with .Values.ingress.annotations }}
     {{- toYaml . | nindent 4 }}
   {{- end }}
 spec:
@@ -22,7 +22,6 @@ spec:
 {{- end }}
   rules:
   {{- if .Values.ingress.hostname }}
-  {{- range .Values.ingress.hosts }}
     - host: {{ .Values.ingress.hostname }}
       http:
         paths:
@@ -30,9 +29,7 @@ spec:
             backend:
               serviceName: {{ .Values.service.name }}
               servicePort: http
-        {{- end }}
   {{- end }}
-  
 {{- end }}
 
 
